@@ -93,4 +93,33 @@ package dev.julia;
     }
 
 
+    public String obtenerAtributos() {
+        return "Planet {" +
+               "Name='" + name + '\'' +
+               ", Satellite Count=" + satelliteCount +
+               ", Mass=" + mass + " kg" +
+               ", Volume=" + volume + " km³" +
+               ", Diameter=" + diameter + " km" +
+               ", Average Distance to Sun=" + averageDistanceToSun + " million km" +
+               ", Type=" + type +
+               ", Visible to Naked Eye=" + visibleToNakedEye +
+               '}';
+    }
+
+    public double calculateDensity() {
+        return mass / volume;
+    }
+
+    public boolean isOuterPlanet() {
+        double distanceToSunKm = averageDistanceToSun * 1_000_000;  
+        double distanceInAU = distanceToSunKm / 149_597_870.0;      
+        
+        if (distanceInAU > 3.4) {
+            return true;  
+        } else {
+            return false; 
+        }
+    }
+
+   
  }
