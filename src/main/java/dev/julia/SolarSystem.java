@@ -1,88 +1,96 @@
 package dev.julia;
+   
 
-public class SolarSystem {
-    private final String nombre;
-    private final int cantidadSatelites;
-    private final double masa;
-    private final double volumen;
-    private final int diametro;
-    private final int distanciaMediaSol;
-    private final TipoPlaneta tipo;
-    private final boolean observableSimpleVista;
 
-    // Enumeración para el tipo de planeta
-    public enum TipoPlaneta {
-        GASEOSO, TERRESTRE, ENANO
+ public class SolarSystem {
+    private String name;
+    private int satelliteCount;
+    private double mass;
+    private double volume;
+    private int diameter;
+    private int averageDistanceToSun;
+    private PlanetType type;
+    private boolean visibleToNakedEye;
+
+    public enum PlanetType {
+        GAS_GIANT, TERRESTRIAL, DWARF
     }
 
-    // Constructor
-    public SolarSystem(String nombre, int cantidadSatelites, double masa, double volumen, int diametro, int distanciaMediaSol, TipoPlaneta tipo, boolean observableSimpleVista) {
-        this.nombre = nombre;
-        this.cantidadSatelites = cantidadSatelites;
-        this.masa = masa;
-        this.volumen = volumen;
-        this.diametro = diametro;
-        this.distanciaMediaSol = distanciaMediaSol;
-        this.tipo = tipo;
-        this.observableSimpleVista = observableSimpleVista;
+ 
+    public SolarSystem(String name, int satelliteCount, double mass, double volume, int diameter, int averageDistanceToSun, PlanetType type, boolean visibleToNakedEye) {
+        this.name = name;
+        this.satelliteCount = satelliteCount;
+        this.mass = mass;
+        this.volume = volume;
+        this.diameter = diameter;
+        this.averageDistanceToSun = averageDistanceToSun;
+        this.type = type;
+        this.visibleToNakedEye = visibleToNakedEye;
     }
 
-    // Métodos para obtener los valores de los atributos
-    public String getNombre() {
-        return nombre;
+    public String getName() {
+        return name;
     }
 
-    public int getCantidadSatelites() {
-        return cantidadSatelites;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public double getMasa() {
-        return masa;
+    public int getSatelliteCount() {
+        return satelliteCount;
     }
 
-    public double getVolumen() {
-        return volumen;
+    public void setSatelliteCount(int satelliteCount) {
+        this.satelliteCount = satelliteCount;
     }
 
-    public int getDiametro() {
-        return diametro;
+    public double getMass() {
+        return mass;
     }
 
-    public int getDistanciaMediaSol() {
-        return distanciaMediaSol;
+    public void setMass(double mass) {
+        this.mass = mass;
     }
 
-    public TipoPlaneta getTipo() {
-        return tipo;
+    public double getVolume() {
+        return volume;
     }
 
-    public boolean isObservableSimpleVista() {
-        return observableSimpleVista;
+    public void setVolume(double volume) {
+        this.volume = volume;
     }
 
-    // Método para calcular la densidad del planeta
-    public double calcularDensidad() {
-        return masa / volumen;
+    public int getDiameter() {
+        return diameter;
     }
 
-    // Método para determinar si el planeta es exterior
-    public boolean esPlanetaExterior() {
-        double distanciaMediaSolKm = distanciaMediaSol * 1_000_000;
-        double distanciaUA = distanciaMediaSolKm / 149_597_870.0;
-        return distanciaUA > 3.4;
+    public void setDiameter(int diameter) {
+        this.diameter = diameter;
     }
 
-    @Override
-    public String toString() {
-        return "Planeta{" +
-                "nombre='" + nombre + '\'' +
-                ", cantidadSatelites=" + cantidadSatelites +
-                ", masa=" + masa +
-                ", volumen=" + volumen +
-                ", diametro=" + diametro +
-                ", distanciaMediaSol=" + distanciaMediaSol +
-                ", tipo=" + tipo +
-                ", observableSimpleVista=" + observableSimpleVista +
-                '}';
+    public int getAverageDistanceToSun() {
+        return averageDistanceToSun;
     }
-}
+
+    public void setAverageDistanceToSun(int averageDistanceToSun) {
+        this.averageDistanceToSun = averageDistanceToSun;
+    }
+
+    public PlanetType getType() {
+        return type;
+    }
+
+    public void setType(PlanetType type) {
+        this.type = type;
+    }
+
+    public boolean isVisibleToNakedEye() {
+        return visibleToNakedEye;
+    }
+
+    public void setVisibleToNakedEye(boolean visibleToNakedEye) {
+        this.visibleToNakedEye = visibleToNakedEye;
+    }
+
+
+ }
