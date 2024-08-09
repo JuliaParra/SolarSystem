@@ -2,7 +2,7 @@ package dev.julia;
    
 
 
- public class SolarSystem {
+ public class Planet {
     private String name;
     private int satelliteCount;
     private double mass;
@@ -17,7 +17,7 @@ package dev.julia;
     }
 
  
-    public SolarSystem(String name, int satelliteCount, double mass, double volume, int diameter, int averageDistanceToSun, PlanetType type, boolean visibleToNakedEye) {
+    public Planet(String name, int satelliteCount, double mass, double volume, int diameter, int averageDistanceToSun, PlanetType type, boolean visibleToNakedEye) {
         this.name = name;
         this.satelliteCount = satelliteCount;
         this.mass = mass;
